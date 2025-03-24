@@ -3,4 +3,8 @@
     width: 100%;
     min-height: 95vh;
     @include boxShadow(none !important);
+
+    @include respond-mediaQuery(phone) {
+        min-height: 90vh;
+    }
 }

@@ -7,6 +7,9 @@
     p {
         font-size: 1.7rem;
         color: $color-dark--1;
+        @include respond-mediaQuery(phone) {
+           margin: 0 !important;
+        }
     }
     #poweredBy {
         display: none !important;

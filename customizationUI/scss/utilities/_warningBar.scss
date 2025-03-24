@@ -1,4 +1,8 @@
-.warning-banner {
-    height: auto;
-    padding: 1rem 1rem 1rem 4rem;
+.warning-banner,
+#msg_warning {
+    height: auto !important;
+    padding: 1rem 1rem 1rem 4rem !important;
+    @include respond-mediaQuery(phone) {
+        padding: 1rem 1rem 1rem 5rem !important;
+    }
 }

@@ -11,6 +11,16 @@ form {
 
     table {
         margin-bottom: 1rem;
+
+        td {
+            .action-button {
+                @include respond-mediaQuery(phone) {
+                    width: 100%;
+                    margin: 1rem 0 0 0;
+                }
+
+            }
+        }
     }
 }
 
@@ -25,8 +35,54 @@ form#reply {
 form#clientLogin>div {
     @include respond-mediaQuery(phone) {
         width: 100% !important;
+
         input {
             width: 100%;
+        }
+    }
+}
+
+form[action="profile.php"] {
+    @include respond-mediaQuery(phone) {
+        margin-top: 20px;
+
+        table td label span {
+            display: inline-block;
+            margin-bottom: 3px;
+        }
+    }
+}
+
+
+form#ticketForm,
+form#reply,
+form[action="profile.php"] {
+    @include respond-mediaQuery(phone) {
+
+        p[style="text-align:center;"],
+        p[style="text-align:center"],
+        p[style="text-align: center;"] {
+            display: flex;
+            justify-content: center;
+
+            input {
+                margin: 0 3px;
+            }
+        }
+    }
+}
+
+#ticketForm {
+    background-color: rgba($color-best--3, $alpha: 0.4);
+    padding: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+
+    @include respond-mediaQuery(phone) {
+        padding: 0 0 3rem 0;
+
+        hr {
+            border-top: none !important;
         }
     }
 }

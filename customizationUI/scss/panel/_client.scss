@@ -14,7 +14,9 @@
     @include respond-mediaQuery(phone) {
         flex-flow: column;
         flex-flow: column-reverse;
-        padding-bottom: 1rem;
+        padding-bottom: 0;
+        padding: 0 !important;
+        margin-bottom: -1px;
     }
 
     #logo {
@@ -24,8 +26,8 @@
         line-height: 0;
 
         @include respond-mediaQuery(phone) {
-            width: 22rem;
-            margin-bottom: 2rem;
+            width: 28rem;
+            padding: 10px 0 15px;
         }
 
         img {
@@ -45,6 +47,13 @@
         display: flex;
         justify-content: flex-end;
 
+        @include respond-mediaQuery(phone) {
+            width: 100%;
+            background-color: $color-primary--1;
+            min-height: 5rem;
+            flex-direction: column;
+        }
+
         p {
             width: auto;
             margin: 0;
@@ -53,11 +62,29 @@
             color: $color-best--1;
             padding: 1rem 2rem;
 
+            @include respond-mediaQuery(phone) {
+                font-size: 14px !important;
+                padding: 1rem 5px !important;
+                flex: 1;
+            }
+
+            a {
+                @include respond-mediaQuery(phone) {
+                    padding: 5px 5px;
+                }
+            }
+
             &:first-child {
                 background-color: $color-primary--1;
                 margin-right: 5px;
                 color: $color-secondary--1;
                 font-weight: 500;
+
+                @include respond-mediaQuery(phone) {
+                    font-weight: 300;
+                    justify-content: center;
+                    align-items: baseline;
+                }
 
                 a {
                     margin-left: 1rem;
@@ -65,12 +92,16 @@
                     font-weight: 400;
                     position: relative;
 
+                    @include respond-mediaQuery(phone) {
+                        padding: 5px 5px;
+                    }
+
                     &:hover {
                         &::after {
                             content: "";
                             height: 1px;
                             width: 100%;
-                            background-color: $color-dark--2;
+                            background-color: $color-best--1;
                             position: absolute;
                             top: 100%;
                             left: 0;
@@ -81,14 +112,23 @@
 
             &:last-child {
                 background-color: $color-dark--2;
+
+                @include respond-mediaQuery(phone) {
+                    justify-content: flex-end;
+                    padding-right: 15px !important;
+                }
             }
 
             a {
                 position: relative;
                 margin-right: 2rem;
 
+                @include respond-mediaQuery(phone) {
+                    text-align: center;
+                }
+
                 &::after {
-                    content: "";
+                    // content: "";
                     height: 2rem;
                     width: 1px;
                     background-color: rgba(255, 255, 255, 0.3);
@@ -130,7 +170,8 @@ ul#nav {
     }
 
     @include respond-mediaQuery(phone) {
-        padding: 5px 10px;
+        padding: 10px 10px;
+        justify-content: space-evenly !important;
     }
 
     li {
@@ -139,6 +180,13 @@ ul#nav {
         list-style: none;
         display: inline;
         margin-right: 2rem;
+
+        @include respond-mediaQuery(phone) {
+            margin-right: 0;
+            border: 1px solid #333;
+            margin: 2px;
+            padding: 0 10px;
+        }
 
         &:last-child {
             margin-right: 0;
@@ -167,10 +215,10 @@ ul#nav {
             }
 
             @include respond-mediaQuery(phone) {
-                padding-left: 3.5rem;
-                font-size: 1.8rem;
-                height: 4rem;
+                font-size: 2.2rem;
+                height: 6rem;
                 line-height: 4rem;
+                padding: 1rem 1rem 1rem 3.5rem
             }
         }
     }
@@ -187,6 +235,32 @@ ul#nav {
 
     @include respond-mediaQuery(phone) {
         padding: 3rem 10px;
+        overflow: hidden !important;
+    }
+
+    h1 {
+        color: $color-dark--1;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    &>.row {
+        @include respond-mediaQuery(phone) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .row {
+        h1 {
+            // background-color: $color-primary--1;
+            // padding: 5px;
+            // color: $color-dark--1;
+
+            @include respond-mediaQuery(phone) {
+                margin-top: 10px;
+            }
+        }
     }
 
     .form-header {
@@ -196,16 +270,20 @@ ul#nav {
         padding: 1rem 1.5rem;
     }
 
-    h1 {
-        color: $color-dark--1;
-        font-weight: 500;
-        margin-bottom: 1rem;
-    }
+
 
     .content {
         padding: 0;
         border: none;
         background-color: transparent;
+    }
+
+    .search.well {
+        @include respond-mediaQuery(phone) {
+            margin-top: -6px;
+            padding: 0 !important;
+        }
+
     }
 
     .sidebar {
@@ -217,33 +295,35 @@ ul#nav {
 
         @include respond-mediaQuery(ipad) {
             margin: 0;
+
+        }
+
+        @include respond-mediaQuery(phone) {
+            margin-bottom: 0 !important;
+
         }
 
         section {
             border: 0;
-            padding: 2rem;
-            border: 1px solid #eee;
-            background-color: #f2f2f2 !important;
+            padding: 10px;
+            background-color: $color-best--5  !important;
+            line-height: 3rem;
 
+            @include respond-mediaQuery(phone) {
+                padding: 0 !important;
+                background-color: transparent !important;
+            }
+
+            strong,
             .header {
-                margin-bottom: 5px;
                 position: relative;
-                padding-left: 2rem;
                 margin-bottom: 1rem;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-                padding-bottom: 1rem;
                 position: relative;
-
-                &:before {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: 37%;
-                    width: 5px;
-                    height: 2rem;
-                    background-color: #51c53e;
-                    @include transform(translate(0, -50%));
-                }
+                color: $color-best--1;
+                background-color: $color-dark--2  !important;
+                padding: 1rem;
+                display: block;
             }
 
             a {
@@ -263,6 +343,41 @@ ul#nav {
                     border-bottom: none;
                 }
             }
+        }
+    }
+
+    .thread-body {
+        padding: 2rem 0;
+
+        @include respond-mediaQuery(phone) {
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+
+            @include respond-mediaQuery(phone) {
+                margin: 0 0 2rem 0
+            }
+        }
+
+        p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            line-height: 2.5rem;
+
+            @include respond-mediaQuery(phone) {
+                font-size: 15px;
+                line-height: 19px;
+            }
+        }
+    }
+
+    .thread-entry.message {
+        .thread-body {
+            padding: 10px !important;
         }
     }
 
@@ -298,11 +413,16 @@ ul#nav {
 
             @include respond-mediaQuery(ipad) {
                 width: 100%;
+                margin-bottom: 20px;
             }
 
             .search-form {
-                padding: 2rem;
-                background-color: rgba($color-best--3, $alpha: 0.6);
+                background-color: transparent;
+                padding: 0;
+
+                @include respond-mediaQuery(phone) {
+                    margin-bottom: 20px;
+                }
 
                 form {
                     display: flex;
@@ -311,7 +431,7 @@ ul#nav {
                     margin: 0;
                 }
 
-                input[type="text"] {
+                ¯ input[type="text"] {
                     width: 80%;
                 }
 
@@ -322,37 +442,32 @@ ul#nav {
             }
         }
 
-        .thread-body {
-            padding: 2rem 0;
 
-            h1 {
-                font-size: 4rem;
-                margin-bottom: 3rem;
-            }
-
-            p {
-                font-size: 1.7rem;
-                line-height: 2.5rem;
-                margin-bottom: 2rem;
-            }
-        }
     }
 
     #breadcrumbs {
-        background-color: $color-dark--2;
-        color: $color-primary--1;
-        padding: 1.5rem 2rem !important;
+        background-color: $color-primary--1;
+        color: rgba($color-best--1, 0.6);
+        padding: 10px !important;
         font-size: 3rem;
         display: flex;
         align-items: center;
 
         a {
-            margin: 5px;
+            &:first-child {
+                margin-left: 0;
+            }
+
+            margin: 0 9px;
             color: $color-best--1;
             font-size: 1.7rem;
 
             &:hover {
-                color: $color-primary--1;
+                color: rgba($color-best--1, 0.9);
+            }
+
+            @include respond-mediaQuery(phone) {
+                font-size: 2.2rem;
             }
         }
     }
@@ -361,11 +476,30 @@ ul#nav {
         text-align: left !important;
     }
 
+    .span8 {
+        border: 1px solid $color-best--5;
+        padding: 12px;
+
+        @include respond-mediaQuery(ipad) {
+            margin-top: 20px;
+        }
+    }
+
     .span8,
     .span4 {
         @include respond-mediaQuery(ipad) {
             width: 100%;
             margin: 0 0 1rem 0;
+        }
+
+        @include respond-mediaQuery(phone) {
+            h2 {
+                margin-top: 2.5rem !important;
+            }
+
+            p {
+                margin-bottom: 2rem;
+            }
         }
     }
 }
@@ -376,11 +510,29 @@ ul#kb {
 
     li {
         background: none !important;
+
+        @include respond-mediaQuery(phone) {
+            padding: 10px 0 !important;
+        }
+
+        .faded {
+            p {
+                @include respond-mediaQuery(phone) {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+        }
     }
 
     h4 {
         a {
             font-size: 1.7rem !important;
+
+            @include respond-mediaQuery(phone) {
+                font-size: 18px !important;
+                line-height: 24px;
+            }
         }
     }
 
@@ -409,8 +561,12 @@ ul#kb {
 }
 
 #faq {
-    padding: 1rem 0;
-    margin-top: 5px;
+    padding: 0;
+    margin-top: 10px;
+
+    @include respond-mediaQuery(phone) {
+        margin-bottom: 3rem;
+    }
 
     ol {
         border-top: none;
@@ -423,6 +579,11 @@ ul#kb {
                 color: $color-dark--2;
                 font-size: 1.7rem;
                 border-bottom-color: rgba($color-dark--1, $alpha: 0.05);
+
+                @include respond-mediaQuery(phone) {
+                    font-size: 2.2rem !important;
+                    line-height: 2.6rem !important;
+                }
             }
 
             &:last-child {
@@ -438,34 +599,53 @@ ul#kb {
     margin-bottom: 2rem;
 
     .faded {
-        font-size: 1.4rem;
-        font-style: italic;
-    }
-
-    .thread-body p {
         font-size: 1.6rem;
-        line-height: 2rem;
+
+        @include respond-mediaQuery(phone) {
+            font-size: 1.8rem;
+        }
     }
-}
 
-// OPEN A NEW TICKET
-#ticketForm {
-    background-color: rgba($color-best--3, $alpha: 0.4);
-    padding: 3rem;
-    margin-top: 1rem;
-    margin-bottom: 4rem;
+    .thread-body {
+        @include respond-mediaQuery(phone) {
+            background-color: transparent !important;
+            padding: 0 !important;
+        }
 
-    @include respond-mediaQuery(phone) {
-        padding: 0;
+        p {
+            font-size: 1.6rem;
+            line-height: 2rem;
+        }
 
-        hr {
-            border-top: none !important;
+        a {
+            color: $color-primary--1  !important;
+        }
+    }
+
+    .article-title {
+        @include respond-mediaQuery(phone) {
+            font-size: 18px;
+            line-height: 20px;
+        }
+    }
+
+    ul {
+        li {
+            font-size: 2rem;
+            line-height: 2.5rem;
+            margin-bottom: 10px;
+
+            @include respond-mediaQuery(phone) {
+                font-size: 15px;
+                line-height: 18px;
+            }
         }
     }
 }
 
 #ticketInfo h1 {
     border-bottom: none;
+
 }
 
 // CHECK TICKET STATUS
@@ -554,6 +734,7 @@ form#clientLogin {
     margin: 0;
     display: flex;
     align-items: center;
+    background-color: $color-best--1  !important;
 
     .pull-right {
         display: flex;
@@ -564,16 +745,20 @@ form#clientLogin {
         @include respond-mediaQuery(phone) {
             float: none !important;
             width: 100%;
-            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 10px;
+            background-color: #eee;
 
             select {
-                flex: 1;
+                margin-top: 5px;
             }
         }
     }
 
     @include respond-mediaQuery(phone) {
         display: block;
+        margin-bottom: 10px;
 
         input {
             width: 100% !important;
@@ -610,14 +795,30 @@ textarea,
 
     @include respond-mediaQuery(phone) {
         height: 6.5rem !important;
+
+    }
+}
+
+.select2-selection__arrow {
+    @include respond-mediaQuery(phone) {
+        height: 100% !important;
     }
 }
 
 input[type="text"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"],
+input[type="password"],
+.selection,
+.select2-selection {
     @include respond-mediaQuery(phone) {
         width: 100%;
+    }
+}
+
+.select2-selection__rendered {
+    @include respond-mediaQuery(phone) {
+        line-height: 6.5rem !important;
     }
 }
 

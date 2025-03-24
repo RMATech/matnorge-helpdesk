@@ -349,6 +349,11 @@ ul.select2-selection__rendered input {
   -moz-box-shadow: none !important;
   box-shadow: none !important;
 }
+@media (max-width: 37.5em) {
+  #container {
+    min-height: 90vh;
+  }
+}
 
 #footer {
   min-height: 5vh;
@@ -361,6 +366,11 @@ ul.select2-selection__rendered input {
   font-size: 1.7rem;
   color: #091510;
 }
+@media (max-width: 37.5em) {
+  #footer p {
+    margin: 0 !important;
+  }
+}
 #footer #poweredBy {
   display: none !important;
 }
@@ -370,12 +380,26 @@ table {
   width: 100% !important;
   border-collapse: collapse;
 }
+@media (max-width: 37.5em) {
+  .table,
+  table {
+    table-layout: fixed !important;
+  }
+}
 .table td,
 .table th,
 table td,
 table th {
   padding: 1rem !important;
   vertical-align: middle !important;
+}
+@media (max-width: 37.5em) {
+  .table td a,
+  .table th a,
+  table td a,
+  table th a {
+    font-size: 15px !important;
+  }
 }
 .table td hr,
 .table th hr,
@@ -388,6 +412,26 @@ table th hr {
 table td img,
 table th img {
   box-shadow: none !important;
+}
+@media (max-width: 37.5em) {
+  .table td,
+  .table th,
+  table td,
+  table th {
+    word-break: break-word !important;
+  }
+}
+@media (max-width: 37.5em) {
+  .table td span,
+  .table td select,
+  .table th span,
+  .table th select,
+  table td span,
+  table td select,
+  table th span,
+  table th select {
+    max-width: 100% !important;
+  }
 }
 .table td,
 table td {
@@ -410,6 +454,21 @@ table th span,
 table th em {
   color: #ffffff !important;
 }
+@media (max-width: 37.5em) {
+  .table th a,
+  .table th p,
+  .table th span,
+  .table th em,
+  table th a,
+  table th p,
+  table th span,
+  table th em {
+    display: block;
+    width: 100%;
+    line-height: 17px;
+    text-align: center;
+  }
+}
 .table th a.desc,
 .table th a.asc,
 table th a.desc,
@@ -421,6 +480,90 @@ table th a.asc {
   background-color: #018D80;
   color: #ffffff;
   border: none;
+}
+@media (max-width: 37.5em) {
+  #ticketTable caption {
+    margin-bottom: -1px;
+  }
+}
+@media (max-width: 37.5em) {
+  #ticketTable {
+    overflow-x: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: block;
+    border: none !important;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 37.5em) {
+  #ticketTable thead th:first-child {
+    border-left: none !important;
+  }
+}
+@media (max-width: 37.5em) {
+  #ticketTable table tbody .Icon.webTicket {
+    display: block;
+  }
+}
+
+@media (max-width: 37.5em) {
+  #ticketInfo table {
+    border-collapse: collapse;
+  }
+  #ticketInfo .pull-right {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  #ticketInfo tbody {
+    display: block;
+  }
+  #ticketInfo tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #ticketInfo tr td,
+  #ticketInfo tr th {
+    display: block;
+    width: 100%;
+    padding: 0 !important;
+    border: none !important;
+    font-size: 15px !important;
+  }
+  #ticketInfo tr td table tr,
+  #ticketInfo tr th table tr {
+    flex-direction: row;
+  }
+  #ticketInfo tr td table tr th,
+  #ticketInfo tr td table tr td,
+  #ticketInfo tr th table tr th,
+  #ticketInfo tr th table tr td {
+    border: 1px solid #eee !important;
+    padding: 10px !important;
+  }
+  #ticketInfo tr td table.infoTable th,
+  #ticketInfo tr td table.infoTable td,
+  #ticketInfo tr th table.infoTable th,
+  #ticketInfo tr th table.infoTable td {
+    border: none !important;
+    border-bottom: 1px solid #e2e5e8 !important;
+  }
+}
+
+@media (max-width: 37.5em) {
+  #ticketTable td,
+  #ticketTable th,
+  #ticketForm td,
+  #ticketForm th {
+    padding: 13px 5px !important;
+  }
+}
+#ticketTable td:empty,
+#ticketForm td:empty {
+  display: none !important;
 }
 
 table.ticket_info > tbody > tr > td {
@@ -458,11 +601,77 @@ form p {
 form table {
   margin-bottom: 1rem;
 }
+@media (max-width: 37.5em) {
+  form table td .action-button {
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+}
 
 form#task_note .redactor-styles,
 form#task_reply .redactor-styles,
 form#reply .redactor-styles {
   max-width: 100% !important;
+}
+
+@media (max-width: 37.5em) {
+  form#clientLogin > div {
+    width: 100% !important;
+  }
+  form#clientLogin > div input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 37.5em) {
+  form[action="profile.php"] {
+    margin-top: 20px;
+  }
+  form[action="profile.php"] table td label span {
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 37.5em) {
+  form#ticketForm p[style="text-align:center;"],
+  form#ticketForm p[style="text-align:center"],
+  form#ticketForm p[style="text-align: center;"],
+  form#reply p[style="text-align:center;"],
+  form#reply p[style="text-align:center"],
+  form#reply p[style="text-align: center;"],
+  form[action="profile.php"] p[style="text-align:center;"],
+  form[action="profile.php"] p[style="text-align:center"],
+  form[action="profile.php"] p[style="text-align: center;"] {
+    display: flex;
+    justify-content: center;
+  }
+  form#ticketForm p[style="text-align:center;"] input,
+  form#ticketForm p[style="text-align:center"] input,
+  form#ticketForm p[style="text-align: center;"] input,
+  form#reply p[style="text-align:center;"] input,
+  form#reply p[style="text-align:center"] input,
+  form#reply p[style="text-align: center;"] input,
+  form[action="profile.php"] p[style="text-align:center;"] input,
+  form[action="profile.php"] p[style="text-align:center"] input,
+  form[action="profile.php"] p[style="text-align: center;"] input {
+    margin: 0 3px;
+  }
+}
+
+#ticketForm {
+  background-color: rgba(226, 229, 232, 0.4);
+  padding: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+@media (max-width: 37.5em) {
+  #ticketForm {
+    padding: 0 0 3rem 0;
+  }
+  #ticketForm hr {
+    border-top: none !important;
+  }
 }
 
 #ui-datepicker-div {
@@ -590,9 +799,16 @@ table.ui-datepicker-calendar td {
   top: 1.7rem;
 }
 
-.warning-banner {
-  height: auto;
-  padding: 1rem 1rem 1rem 4rem;
+.warning-banner,
+#msg_warning {
+  height: auto !important;
+  padding: 1rem 1rem 1rem 4rem !important;
+}
+@media (max-width: 37.5em) {
+  .warning-banner,
+  #msg_warning {
+    padding: 1rem 1rem 1rem 5rem !important;
+  }
 }
 
 .file {
@@ -609,7 +825,8 @@ table.ui-datepicker-calendar td {
   margin-left: 0 !important;
 }
 
-#msg_notice {
+#msg_notice,
+#msg_error {
   min-height: 36px !important;
   line-height: 26px;
   height: auto;

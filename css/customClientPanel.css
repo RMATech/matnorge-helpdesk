@@ -1099,13 +1099,14 @@ hr {
 }
 #header .pull-right p:last-child,
 #header .flush-right p:last-child {
-  background-color: #333;
+  background-color: #222;
 }
 @media (max-width: 37.5em) {
   #header .pull-right p:last-child,
   #header .flush-right p:last-child {
     justify-content: flex-end;
     padding-right: 15px !important;
+    padding-top: 12px !important;
   }
 }
 #header .pull-right p a,
@@ -1164,7 +1165,7 @@ ul#nav {
 }
 @media (max-width: 37.5em) {
   ul#nav {
-    padding: 10px 10px;
+    padding: 0 10px 10px 10px;
     justify-content: space-evenly !important;
   }
 }
@@ -1181,10 +1182,26 @@ ul#nav li {
     border: 1px solid #333;
     margin: 2px;
     padding: 0 10px;
+    width: 100%;
   }
 }
 ul#nav li:last-child {
   margin-right: 0;
+}
+ul#nav li a.home {
+  background-image: url("@/../../assets/default/images/icons/home1.png") !important;
+}
+ul#nav li a.kb {
+  background-image: url("@/../../assets/default/images/icons/kb1.png") !important;
+}
+ul#nav li a.new {
+  background-image: url("@/../../assets/default/images/icons/new1.png") !important;
+}
+ul#nav li a.status {
+  background-image: url("@/../../assets/default/images/icons/status1.png") !important;
+}
+ul#nav li a.tickets {
+  background-image: url("@/../../assets/default/images/icons/tix1.png") !important;
 }
 ul#nav li a {
   text-transform: uppercase;
@@ -1216,6 +1233,8 @@ ul#nav li a.active, ul#nav li a:hover {
     height: 6rem;
     line-height: 4rem;
     padding: 1rem 1rem 1rem 3.5rem;
+    width: 100% !important;
+    text-align: left;
   }
 }
 
@@ -1318,6 +1337,11 @@ ul#nav li a.active, ul#nav li a:hover {
 }
 #content .sidebar section div:last-child a {
   border-bottom: none;
+}
+@media (max-width: 37.5em) {
+  #content .sidebar select {
+    display: none;
+  }
 }
 #content .thread-body {
   padding: 2rem 0;

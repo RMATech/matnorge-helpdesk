@@ -30,9 +30,9 @@ if ($content) {
     </div>
     <p>
         <input class="btn" type="submit" value="<?php echo __('Sign In'); ?>">
-<?php if ($suggest_pwreset) { ?>
+<?php /*if ($suggest_pwreset) {*/ ?>
         <a style="padding-top:4px;display:inline-block;" href="pwreset.php"><?php echo __('Forgot My Password'); ?></a>
-<?php } ?>
+<?php /*}*/ ?>
     </p>
     </div>
     <div style="display:table-cell;padding: 15px;vertical-align:top">
